@@ -11,25 +11,29 @@ import UIKit
 class ViewController: UIViewController {
     
     // Mark: Properties
+    // Connected input text view to controller through an outlet
     @IBOutlet weak var inputText: UITextView!
+    // Connected output text view to controller through an outlet
     @IBOutlet weak var outputText: UITextView!
+    // Created string variable for numbers being built
     var builtNumberFromLoop = ""
-    // Mark: Methods
     
+    // Mark: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
+    // Created an action for when the convert button is pressed
     @IBAction func convertNumber(_ sender: Any) {
-        
+        // guard against no input
         guard let inputNumber = inputText.text, inputText.text != "" else {
             outputText.text = "Please enter phone numbers to convert."
             return
         }
+        // set variables to zero
         outputText.text = ""
         builtNumberFromLoop = ""
-        
+        // for in loop to check every character for a letter, number, or symbol
         for character in inputNumber.lowercased() {
             switch character {
             case "a"..."c":
@@ -65,7 +69,7 @@ class ViewController: UIViewController {
                 _ = ""
                 
             }
-            
+            // if statement to check variables in string
             if builtNumberFromLoop.count > 10 {
                 builtNumberFromLoop.remove(at: builtNumberFromLoop.index(before: builtNumberFromLoop.endIndex))
             }
