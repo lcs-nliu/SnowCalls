@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // Mark: Properties
+    @IBOutlet weak var inputText: UITextView!
+    @IBOutlet weak var outputText: UITextView!
+    
+    // Mark: Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func convertNumber(_ sender: Any) {
 
-
+        }
+    }
+    
+    
 }
 

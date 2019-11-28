@@ -16,12 +16,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEl-uE-eoj">
-                                <rect key="frame" x="164" y="214" width="46" height="30"/>
+                                <rect key="frame" x="160" y="214" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Box-dD-gVf"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGX-Sh-9gO">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="67" y="269" width="240" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -40,10 +43,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="inputText" destination="9Nd-ww-i2i" id="1bo-H5-UBj"/>
+                        <outlet property="outputText" destination="GGX-Sh-9gO" id="tgM-Ih-gZI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="127"/>
+            <point key="canvasLocation" x="-58.399999999999999" y="126.38680659670166"/>
         </scene>
     </scenes>
 </document>
