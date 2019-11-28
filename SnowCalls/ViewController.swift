@@ -29,45 +29,52 @@ class ViewController: UIViewController {
         outputText.text = ""
         builtNumberFromLoop = ""
         
-        for character in inputNumber {
+        for character in inputNumber.lowercased() {
             switch character {
-            case "A","B","C":
+            case "a"..."c":
                 let character = 2
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            case "D","E","F":
+            case "d"..."f":
                 let character = 3
-                 builtNumberFromLoop += String(character)
-                 print(builtNumberFromLoop)
-            case "G","H","I":
+                builtNumberFromLoop += String(character)
+                print(builtNumberFromLoop)
+            case "g"..."i":
                 let character = 4
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            case "J","K","L":
+            case "j"..."l":
                 let character = 5
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            case "M","N","O":
+            case "m"..."o":
                 let character = 6
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            case "P","Q","R":
+            case "p"..."r":
                 let character = 7
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            case "S","T","U":
+            case "s"..."u":
                 let character = 8
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            case "V","X","Y","Z":
+            case "v"..."z":
                 let character = 9
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-            default:
-                print(character)
+            case "-":
+                _ = ""
+            case "0"..."9":
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
-
+            default:
+                _ = ""
+                
+            }
+            
+            if builtNumberFromLoop.count > 10 {
+                builtNumberFromLoop.remove(at: builtNumberFromLoop.index(before: builtNumberFromLoop.endIndex))
             }
         }
         outputText.text = builtNumberFromLoop
