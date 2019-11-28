@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func convertNumber(_ sender: Any) {
+        
         guard let inputNumber = inputText.text, inputText.text != "" else {
             outputText.text = "Please enter phone numbers to convert."
             return
@@ -32,39 +33,31 @@ class ViewController: UIViewController {
         for character in inputNumber.lowercased() {
             switch character {
             case "a"..."c":
-                let character = 2
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "2"
                 print(builtNumberFromLoop)
             case "d"..."f":
-                let character = 3
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "3"
                 print(builtNumberFromLoop)
             case "g"..."i":
-                let character = 4
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "4"
                 print(builtNumberFromLoop)
             case "j"..."l":
-                let character = 5
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "5"
                 print(builtNumberFromLoop)
             case "m"..."o":
-                let character = 6
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "6"
                 print(builtNumberFromLoop)
             case "p"..."r":
-                let character = 7
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "7"
                 print(builtNumberFromLoop)
             case "s"..."u":
-                let character = 8
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "8"
                 print(builtNumberFromLoop)
             case "v"..."z":
-                let character = 9
-                builtNumberFromLoop += String(character)
+                builtNumberFromLoop += "9"
                 print(builtNumberFromLoop)
             case "-":
-                _ = ""
+                print(character)
             case "0"..."9":
                 builtNumberFromLoop += String(character)
                 print(builtNumberFromLoop)
@@ -76,6 +69,8 @@ class ViewController: UIViewController {
             if builtNumberFromLoop.count > 10 {
                 builtNumberFromLoop.remove(at: builtNumberFromLoop.index(before: builtNumberFromLoop.endIndex))
             }
+            
+        
         }
         outputText.text = builtNumberFromLoop
     }
