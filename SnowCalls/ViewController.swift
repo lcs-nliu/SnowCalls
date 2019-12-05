@@ -35,9 +35,11 @@ class ViewController: UIViewController {
         
         // set variables to zero
         outputText.text = ""
-        builtNumberFromLoop = ""
         // for in loop to check every character for a letter, number, or symbol
         for piece in pieces {
+
+            // Reset from each new piece
+            builtNumberFromLoop = ""
             for character in piece {
                 switch character {
                 case "a"..."c":
@@ -73,11 +75,9 @@ class ViewController: UIViewController {
                 
             }
             // Add a break after every number
-            builtNumberFromLoop += "\n"
+            outputText.text += builtNumberFromLoop + "\n"
         }
         
-        // Display number to text view
-        outputText.text += builtNumberFromLoop
 
     }
 }
