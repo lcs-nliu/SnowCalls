@@ -30,55 +30,57 @@ class ViewController: UIViewController {
             outputText.text = "Please enter phone numbers to convert."
             return
         }
+        // Created variable pieces to seperate diff phone numbers
+        let pieces = inputNumber.lowercased().split(separator: "\n")
+        
         // set variables to zero
         outputText.text = ""
         builtNumberFromLoop = ""
         // for in loop to check every character for a letter, number, or symbol
-        for character in inputNumber.lowercased() {
-            switch character {
-            case "a"..."c":
-                builtNumberFromLoop += "2"
-                print(builtNumberFromLoop)
-            case "d"..."f":
-                builtNumberFromLoop += "3"
-                print(builtNumberFromLoop)
-            case "g"..."i":
-                builtNumberFromLoop += "4"
-                print(builtNumberFromLoop)
-            case "j"..."l":
-                builtNumberFromLoop += "5"
-                print(builtNumberFromLoop)
-            case "m"..."o":
-                builtNumberFromLoop += "6"
-                print(builtNumberFromLoop)
-            case "p"..."r":
-                builtNumberFromLoop += "7"
-                print(builtNumberFromLoop)
-            case "s"..."u":
-                builtNumberFromLoop += "8"
-                print(builtNumberFromLoop)
-            case "v"..."z":
-                builtNumberFromLoop += "9"
-                print(builtNumberFromLoop)
-            case "-":
-                print(character)
-            case "0"..."9":
-                builtNumberFromLoop += String(character)
-                print(builtNumberFromLoop)
-            default:
-                _ = ""
+        for piece in pieces {
+            for character in piece {
+                switch character {
+                case "a"..."c":
+                    builtNumberFromLoop += "2"
+                case "d"..."f":
+                    builtNumberFromLoop += "3"
+                case "g"..."i":
+                    builtNumberFromLoop += "4"
+                case "j"..."l":
+                    builtNumberFromLoop += "5"
+                case "m"..."o":
+                    builtNumberFromLoop += "6"
+                case "p"..."r":
+                    builtNumberFromLoop += "7"
+                case "s"..."u":
+                    builtNumberFromLoop += "8"
+                case "v"..."z":
+                    builtNumberFromLoop += "9"
+                case "0"..."9":
+                    builtNumberFromLoop += String(character)
+                default:
+                    _ = ""
+                    
+                }
+                
+                // Add a dash
+                if builtNumberFromLoop.count == 3 {
+                    builtNumberFromLoop += "-"
+                } else if builtNumberFromLoop.count == 7 {
+                    builtNumberFromLoop += "-"
+                }
+                
                 
             }
-            // if statement to check variables in string
-            if builtNumberFromLoop.count > 10 {
-                builtNumberFromLoop.remove(at: builtNumberFromLoop.index(before: builtNumberFromLoop.endIndex))
-            }
-            
-        
+            // Add a break after every number
+            builtNumberFromLoop += "\n"
         }
-        outputText.text = builtNumberFromLoop
+        
+        // Display number to text view
+        outputText.text += builtNumberFromLoop
+
     }
-    
-    
 }
+
+
 
