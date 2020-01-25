@@ -74,6 +74,7 @@ class ViewController: UIViewController {
                 
                 
             }
+            // Screen output text
             // Add a break after every number
             outputText.text += builtNumberFromLoop + "\n"
         }
